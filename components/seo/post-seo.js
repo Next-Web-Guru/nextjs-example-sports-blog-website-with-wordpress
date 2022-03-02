@@ -7,8 +7,6 @@ function PostSeo({ data }) {
     const imageSize = data.featuredImage.node.mediaDetails
     const authorName = data.author.node.name
 
-    console.log(seo.fullHead)
-
     return (
         <Head>
 

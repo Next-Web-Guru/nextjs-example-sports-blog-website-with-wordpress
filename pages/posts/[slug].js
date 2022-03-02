@@ -18,7 +18,7 @@ export default function Post({ post, posts, preview }) {
   const morePosts = posts?.edges
 
 
-  console.log(router)
+  //console.log(router)
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />

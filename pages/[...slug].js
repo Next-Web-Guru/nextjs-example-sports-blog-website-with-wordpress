@@ -8,8 +8,12 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import Footer from "../components/layout/footer";
 import Header from "../components/layout/header";
+import PageData from "../components/page/page-data";
 import Post from "../components/post/post";
-import { getAllPostsWithSlug, getCateogryRecentPostbyName, getHeaderMenuByName, getPostDetailsByUri } from "../lib/api";
+import { getAllPostsWithSlug, getCateogryRecentPostbyName, getHeaderMenuByName, getPageDetailsByUri, getPostDetailsByUri } from "../lib/api";
+
+
+//export const config = { amp: 'hybrid' }
 
 function OtherPages(props) {
 
@@ -30,20 +34,23 @@ function OtherPages(props) {
 
 
         const urlType = props.urlType
+        const pageType = props.pageType
+
         //if found any data
         if (props.data && props.data) {
 
             //check for category, tag, author
-            if (urlType === 'category' || urlType === 'tag' || urlType === 'author') {
+            if (pageType === 'archive') {
 
-                componentToShow = <PostList urlType={props.urlType} urlName={props.urlName} data={props.data} />
+                componentToShow = <PostList urlType={props.urlType} urlName={props.urlName} data={props.data} slug={props.slug} />
 
             }
+            else if (pageType === 'page') {
+                //it means it is a page
+                componentToShow = <PageData data={props.data} />
+            }
             else {
-                //it means it is a post or page
-                //we can also call different component for post and page
-                //currently we are call one component for both post and page
-                //console.log(props.data)
+                //it means it is a post
 
                 componentToShow = <Post data={props.data} />
 
@@ -78,23 +85,40 @@ export async function getStaticProps(context) {
 
     //get data
     let data;
+    let pageType;
+
     if (urlType === 'category' || urlType === 'tag' || urlType === 'author') {
         data = await getCateogryRecentPostbyName(slug[1])
+
+        pageType = "archive"
+    }
+    else if (slug.length == 1) {
+        //it means is is a page
+
+        const uri = slug[0]
+        data = await getPageDetailsByUri(uri)
+
+        pageType = "page"
     }
     else {
-        //it means it is a post or page
+        //it means it is a post
         const uri = params.slug.join('/')
         data = await getPostDetailsByUri(uri)
+
+        pageType = "post"
     }
 
+    // menu data
     const menuData = await getHeaderMenuByName(process.env.headerMenuName)
 
     return {
         props: {
             urlType: urlType,
-            urlName: slug[1],
+            urlName: slug[0],
             data: data,
-            menu: menuData.menu
+            menu: menuData.menu,
+            pageType: pageType,
+            slug: slug,
         },
         revalidate: 10 //10 minutes
     }

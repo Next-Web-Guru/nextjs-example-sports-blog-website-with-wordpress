@@ -27,6 +27,7 @@ import Link from 'next/link'
 import { HelperData } from '../../helpers/helper-data'
 import Image from 'next/image';
 import { FaSun, FaMoon, FaInstagram, FaFacebook, FaTelegram, FaYoutube } from 'react-icons/fa'
+import Headroom from 'react-headroom'
 
 function Header({ menu }) {
     const { isOpen, onToggle } = useDisclosure();
@@ -36,80 +37,82 @@ function Header({ menu }) {
     const { toggleColorMode } = useColorMode()
 
     const menuItems = menu.menuItems.edges
-    console.log("menu =", menuItems)
+    //console.log("menu =", menuItems)
 
 
     return (
-        <Box>
-            <Flex
-                bg={useColorModeValue('white', 'gray.800')}
-                color={useColorModeValue('gray.600', 'white')}
-                minH={'60px'}
-                py={{ base: 2 }}
-                px={{ base: 4 }}
-                borderBottom={1}
-                borderStyle={'solid'}
-                borderColor={useColorModeValue('gray.200', 'gray.900')}
-                align={'center'}>
+        <Headroom>
+            <Box>
                 <Flex
-                    flex={{ base: 1, md: 'auto' }}
-                    ml={{ base: -2 }}
-                    display={{ base: 'flex', md: 'none' }}>
-                    <IconButton
-                        onClick={onToggle}
-                        icon={
-                            isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-                        }
-                        variant={'ghost'}
-                        aria-label={'Toggle Navigation'}
-                    />
-                </Flex>
-                <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                    <Link href="/">
-                        {
-                            helperData.isDark ? (
-                                <Image
-                                    src="https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/05/07112007/baba-logo-white.png"
-                                    alt="BabaCric Logo"
-                                    width={128}
-                                    height={27.75}
-                                />
-                            ) : (
-                                <Image
-                                    src="https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/05/07112004/baba-logo-wide.png"
-                                    alt="BabaCric Logo"
-                                    width={128}
-                                    height={27.75}
-                                />
-                            )
-                        }
-                    </Link>
-
-                    <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-                        <DesktopNav menuItems={menuItems} />
+                    bg={useColorModeValue('white', 'gray.800')}
+                    color={useColorModeValue('gray.600', 'white')}
+                    minH={'60px'}
+                    py={{ base: 2 }}
+                    px={{ base: 4 }}
+                    borderBottom={1}
+                    borderStyle={'solid'}
+                    borderColor={useColorModeValue('gray.200', 'gray.900')}
+                    align={'center'}>
+                    <Flex
+                        flex={{ base: 1, md: 'auto' }}
+                        ml={{ base: -2 }}
+                        display={{ base: 'flex', md: 'none' }}>
+                        <IconButton
+                            onClick={onToggle}
+                            icon={
+                                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                            }
+                            variant={'ghost'}
+                            aria-label={'Toggle Navigation'}
+                        />
                     </Flex>
+                    <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+                        <Link href="/">
+                            {
+                                helperData.isDark ? (
+                                    <Image
+                                        src="https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/05/07112007/baba-logo-white.png"
+                                        alt="BabaCric Logo"
+                                        width={128}
+                                        height={27.75}
+                                    />
+                                ) : (
+                                    <Image
+                                        src="https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/05/07112004/baba-logo-wide.png"
+                                        alt="BabaCric Logo"
+                                        width={128}
+                                        height={27.75}
+                                    />
+                                )
+                            }
+                        </Link>
+
+                        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+                            <DesktopNav menuItems={menuItems} />
+                        </Flex>
+                    </Flex>
+
+                    <Stack
+                        flex={{ base: 1, md: 0 }}
+                        justify={'flex-end'}
+                        direction={'row'}
+                        spacing={{ base: 1, md: 6 }}>
+
+                        <IconButton ml={8} icon={helperData.isDark ? <FaSun /> : <FaMoon />} isRound="true" onClick={toggleColorMode}></IconButton>
+
+                        <IconButton onClick={() => window.open("https://telegram.me/baba_cric", "_blank")} ml={8} icon={<FaTelegram />} isRound="true" ></IconButton>
+
+                        <IconButton onClick={() => window.open("https://www.instagram.com/baba_cric/", "_blank")} ml={8} icon={<FaInstagram />} isRound="true"></IconButton>
+
+                        <IconButton onClick={() => window.open("https://www.youtube.com/c/BabaCric", "_blank")} display={{ base: 'none', md: 'flex' }} ml={8} icon={<FaYoutube />} isRound="true" ></IconButton>
+                    </Stack>
                 </Flex>
 
-                <Stack
-                    flex={{ base: 1, md: 0 }}
-                    justify={'flex-end'}
-                    direction={'row'}
-                    spacing={{ base: 1, md: 6 }}>
-
-                    <IconButton ml={8} icon={helperData.isDark ? <FaSun /> : <FaMoon />} isRound="true" onClick={toggleColorMode}></IconButton>
-
-                    <IconButton onClick={() => window.open("https://telegram.me/baba_cric", "_blank")} ml={8} icon={<FaTelegram />} isRound="true" ></IconButton>
-
-                    <IconButton onClick={() => window.open("https://www.instagram.com/baba_cric/", "_blank")} ml={8} icon={<FaInstagram />} isRound="true"></IconButton>
-
-                    <IconButton onClick={() => window.open("https://www.youtube.com/c/BabaCric", "_blank")} display={{ base: 'none', md: 'flex' }} ml={8} icon={<FaYoutube />} isRound="true" ></IconButton>
-                </Stack>
-            </Flex>
-
-            <Collapse in={isOpen} animateOpacity>
-                <MobileNav menuItems={menuItems} onToggle={onToggle} />
-            </Collapse>
-        </Box>
+                <Collapse in={isOpen} animateOpacity>
+                    <MobileNav menuItems={menuItems} onToggle={onToggle} />
+                </Collapse>
+            </Box>
+        </Headroom>
     );
 }
 

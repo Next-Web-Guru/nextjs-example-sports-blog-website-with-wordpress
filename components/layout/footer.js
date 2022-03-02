@@ -76,7 +76,7 @@ export default function Footer() {
 
                     <Stack align={'flex-start'}>
                         <ListHeader>Install App</ListHeader>
-                        <a target="_blank" href={'https://play.google.com/store/apps/details?id=com.dream11tipsbaba.cricbaba'}>Android APP</a>
+                        <a target="_blank" href={'https://play.google.com/store/apps/details?id=com.babacric.app'}>Android APP</a>
                     </Stack>
                 </SimpleGrid>
             </Container>

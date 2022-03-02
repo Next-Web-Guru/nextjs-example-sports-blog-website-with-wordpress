@@ -145,3 +145,28 @@ a:hover {
 	position: sticky;
 	top: 0;
 }
+
+.desktopShareContainer {
+	position: sticky;
+	top: 0;
+}
+
+.mobileShareContainer {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	padding: 10px;
+	z-index: 1;
+	background-color: #5eeec4;
+	border-radius: 50%;
+	margin: 10px;
+	opacity: 0.7;
+}
+
+.tagContainer {
+	display: "block";
+}
+
+.tagBox {
+	margin: 4px;
+}
