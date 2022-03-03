@@ -13,6 +13,7 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <meta charSet="UTF-8" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta data-rh="true" name="google-site-verification" content="3FCgkBGO8Qfael6rkqbx7be0JHNduxct6Xc7TFsc5_0" />
         <meta data-rh="true" name="facebook-domain-verification" content="vylwdr385iepjfnp4mkn0s77p6p94b" />
