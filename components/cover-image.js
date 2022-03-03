@@ -17,7 +17,7 @@ export default function CoverImage({ title, coverImage, uri }) {
   return (
     <div className="sm:mx-0">
       {uri ? (
-        <Link href={uri}>
+        <Link prefetch={false} href={uri}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (

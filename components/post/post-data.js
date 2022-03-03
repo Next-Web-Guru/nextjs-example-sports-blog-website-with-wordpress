@@ -30,7 +30,7 @@ function PostData({ data }) {
 
                 <br />
                 {/* Telegram Join ad */}
-                <Link href="https://bit.ly/3HMsPd8" target="_blank">
+                <Link prefetch={false} href="https://bit.ly/3HMsPd8" target="_blank">
                     <Image
                         src='https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/02/11104953/telegram-footer.png'
                         width={360}
@@ -53,7 +53,7 @@ function PostData({ data }) {
                                 //console.log(tag.node)
                                 return (
                                     <Tag key={tag.node.name} className="tagBox">
-                                        <Link href={tag.node.uri}>
+                                        <Link prefetch={false} href={tag.node.uri}>
                                             {`#${tag.node.name}`}
                                         </Link>
                                     </Tag>
@@ -65,7 +65,7 @@ function PostData({ data }) {
 
                 <br />
                 {/* Telegram Join ad */}
-                <Link href="https://bit.ly/3HMsPd8" target="_blank">
+                <Link prefetch={false} href="https://bit.ly/3HMsPd8" target="_blank">
                     <Image
                         src='https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/02/11104953/telegram-footer.png'
                         width={360}

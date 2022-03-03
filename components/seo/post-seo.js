@@ -16,7 +16,7 @@ function PostSeo({ data }) {
 
             <meta name="description" content={seo.metaDesc} />
 
-            <link rel="canonical" href={seo.canonical} />
+            <Link prefetch={false} rel="canonical" href={seo.canonical} />
 
             <meta property="og:locale" content="en_US" />
             <meta property="og:type" content={seo.opengraphType} />

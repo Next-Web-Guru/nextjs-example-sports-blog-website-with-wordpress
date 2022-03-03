@@ -42,8 +42,8 @@ function SocialShare({ data }) {
                     <WhatsappShareButton url={post_link}>
                         <WhatsappIcon size={32} round={true} />
                     </WhatsappShareButton>
-                    <LinkedinShareButton url={post_link}>
-                        <LinkedinIcon size={32} round={true} />
+                    <Link prefetch={false} edinShareButton url={post_link}>
+                        <Link prefetch={false} edinIcon size={32} round={true} />
                     </LinkedinShareButton>
                     <TumblrShareButton url={post_link}>
                         <TumblrIcon size={32} round={true} />

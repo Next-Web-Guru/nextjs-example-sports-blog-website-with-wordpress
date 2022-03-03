@@ -56,9 +56,9 @@ export default function Footer() {
                 <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
                     <Stack align={'flex-start'}>
                         <ListHeader>Company</ListHeader>
-                        <Link href={'/about-us/'}>About Us</Link>
-                        <Link href={'/disclaimer/'}>Disclaimer</Link>
-                        <Link href={'/privacy-policy/'}>Privacy Policy</Link>
+                        <Link prefetch={false} href={'/about-us/'}>About Us</Link>
+                        <Link prefetch={false} href={'/disclaimer/'}>Disclaimer</Link>
+                        <Link prefetch={false} href={'/privacy-policy/'}>Privacy Policy</Link>
                     </Stack>
 
                     <Stack align={'flex-start'}>
@@ -69,9 +69,9 @@ export default function Footer() {
 
                     <Stack align={'flex-start'}>
                         <ListHeader>Quick Link</ListHeader>
-                        <Link href={'/'}>Home</Link>
-                        <Link href={'/category/fantasy-cricket/'}>Dream11 Prediction</Link>
-                        <Link href={'/category/fantasy-platform/'}>Fantasy Platform</Link>
+                        <Link prefetch={false} href={'/'}>Home</Link>
+                        <Link prefetch={false} href={'/category/fantasy-cricket/'}>Dream11 Prediction</Link>
+                        <Link prefetch={false} href={'/category/fantasy-platform/'}>Fantasy Platform</Link>
                     </Stack>
 
                     <Stack align={'flex-start'}>

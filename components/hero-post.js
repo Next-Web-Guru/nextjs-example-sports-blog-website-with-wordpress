@@ -23,7 +23,7 @@ export default function HeroPost({
       <div>
         <Box p={4}>
           <Text as="h3" fontSize="large" fontWeight="bold" className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link href={uri}>
+            <Link prefetch={false} href={uri}>
               <a
                 className="hover:underline"
                 dangerouslySetInnerHTML={{ __html: title }}

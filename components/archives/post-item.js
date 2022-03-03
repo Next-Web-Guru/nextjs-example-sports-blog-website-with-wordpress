@@ -15,7 +15,7 @@ function PostItem({ post }) {
     //const date = new Date()
 
     return (
-        <Link href={uri}>
+        <Link prefetch={false} href={uri}>
             <a>
                 <Box maxW="lg" borderWidth="1px" minHeight="200px" overflow="hidden">
                     <Image src={imagePath} width={320} height={180} layout="responsive" />
