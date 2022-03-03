@@ -29,7 +29,7 @@ function OtherPages(props) {
         )
     }
     else {
-        console.log(props)
+        //console.log(props)
 
 
 
