@@ -1,17 +1,13 @@
 import Head from 'next/head'
-import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
 import { getAllPostsForHome, getHeaderMenuByName } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
 import { useRouter } from 'next/router'
 import Header from '../components/layout/header'
 import Footer from '../components/layout/footer'
 import { VStack } from '@chakra-ui/react'
 
-export default function Index({ allPosts: { edges }, preview, menu }) {
+export default function Index({ allPosts: { edges }, preview }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
@@ -27,7 +23,7 @@ export default function Index({ allPosts: { edges }, preview, menu }) {
         <link rel="canonical" href="http://babacric.in/" />
       </Head>
 
-      <Header menu={menu} />
+      {/* <Header menu={menu} /> */}
       <VStack>
         <div className="mainBody">
           <main className="mainContent">
@@ -57,9 +53,13 @@ export default function Index({ allPosts: { edges }, preview, menu }) {
 export async function getStaticProps({ preview = false }) {
 
   const allPosts = await getAllPostsForHome(preview)
-  const menuData = await getHeaderMenuByName(process.env.headerMenuName)
+  //const menuData = await getHeaderMenuByName(process.env.headerMenuName)
 
   return {
-    props: { allPosts, preview, menu: menuData.menu },
+    props: {
+      allPosts,
+      preview,
+      //menu: menuData.menu 
+    },
   }
 }

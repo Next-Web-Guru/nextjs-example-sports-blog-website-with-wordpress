@@ -64,7 +64,7 @@ function OtherPages(props) {
 
     return (
         <>
-            <Header menu={props.menu} />
+            {/* <Header menu={props.menu} /> */}
             <VStack>
                 <div className="mainBody">
                     <main className="mainContent">
@@ -109,14 +109,14 @@ export async function getStaticProps(context) {
     }
 
     // menu data
-    const menuData = await getHeaderMenuByName(process.env.headerMenuName)
+    //const menuData = await getHeaderMenuByName(process.env.headerMenuName)
 
     return {
         props: {
             urlType: urlType,
             urlName: slug[0],
             data: data,
-            menu: menuData.menu,
+            //menu: menuData.menu,
             pageType: pageType,
             slug: slug,
         },
