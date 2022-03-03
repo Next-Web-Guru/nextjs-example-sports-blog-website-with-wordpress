@@ -1,5 +1,6 @@
 module.exports = {
     env: {
+        wordpressApiUrl: "https://babacric.in/graphql",
         headerMenuName: "BabaCrick Main Menu"
     },
     images: {
