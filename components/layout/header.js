@@ -67,7 +67,7 @@ function Header({ menu }) {
                         />
                     </Flex>
                     <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                        <Link prefetch={false} href="/">
+                        <Link href="/">
                             {
                                 helperData.isDark ? (
                                     <Image
@@ -127,7 +127,7 @@ const DesktopNav = ({ menuItems }) => {
                 <Box key={navItem.node.label}>
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         <PopoverTrigger>
-                            <Link prefetch={false}
+                            <Link
                                 p={2}
                                 href={navItem.node.path ?? '#'}
                                 fontSize={'sm'}
@@ -170,7 +170,7 @@ const MobileNavItem = ({ label, href, onToggle }) => {
 
     return (
         <Stack spacing={4} onClick={onToggle}>
-            <Link prefetch={false} href={href}>
+            <Link href={href}>
                 <Flex
                     py={2}
                     justify={'space-between'}

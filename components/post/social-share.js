@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import {
     FacebookShareButton,
@@ -43,7 +44,7 @@ function SocialShare({ data }) {
                         <WhatsappIcon size={32} round={true} />
                     </WhatsappShareButton>
                     <LinkedinShareButton edinShareButton url={post_link}>
-                        <Link prefetch={false} edinIcon size={32} round={true} />
+                        <LinkedinIcon size={32} round={true} />
                     </LinkedinShareButton>
                     <TumblrShareButton url={post_link}>
                         <TumblrIcon size={32} round={true} />

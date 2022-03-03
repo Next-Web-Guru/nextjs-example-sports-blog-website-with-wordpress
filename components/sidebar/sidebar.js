@@ -6,7 +6,7 @@ function Sidebar() {
         <div className="sidebarContainer">
             <Heading size="md" textAlign="center" mt="5" p="2" bgColor="#08ffc5" color="blackAlpha.800">Advertisment</Heading>
 
-            <Link prefetch={false} href="https://bit.ly/3y4rhW4" target="_blank">
+            <Link href="https://bit.ly/3y4rhW4" target="_blank">
 
                 <PrimeMembeershipCard />
 

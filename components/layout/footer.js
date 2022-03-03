@@ -56,28 +56,28 @@ export default function Footer() {
                 <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
                     <Stack align={'flex-start'}>
                         <ListHeader>Company</ListHeader>
-                        <Link prefetch={false} href={'/about-us/'}>About Us</Link>
-                        <Link prefetch={false} href={'/disclaimer/'}>Disclaimer</Link>
-                        <Link prefetch={false} href={'/privacy-policy/'}>Privacy Policy</Link>
+                        <Link href={'/about-us/'}>About Us</Link>
+                        <Link href={'/disclaimer/'}>Disclaimer</Link>
+                        <Link href={'/privacy-policy/'}>Privacy Policy</Link>
                     </Stack>
 
-                    <Stack align={'flex-start'}>
+                    {/* <Stack align={'flex-start'}>
                         <ListHeader>Contact Us</ListHeader>
                         <a href="mailto:d11tipsbaba@gmail.com?subject=Contact-">Email us</a>
-                        <a target="_blank" href={'https://www.instagram.com/baba_cric/'}>Message on Instagram</a>
-                    </Stack>
+                        <a target="_blank" rel="noreferre" href={'https://www.instagram.com/baba_cric/'}>Message on Instagram</a>
+                    </Stack> */}
 
                     <Stack align={'flex-start'}>
                         <ListHeader>Quick Link</ListHeader>
-                        <Link prefetch={false} href={'/'}>Home</Link>
-                        <Link prefetch={false} href={'/category/fantasy-cricket/'}>Dream11 Prediction</Link>
-                        <Link prefetch={false} href={'/category/fantasy-platform/'}>Fantasy Platform</Link>
+                        <Link href={'/'}>Home</Link>
+                        <Link href={'/category/fantasy-cricket/'}>Dream11 Prediction</Link>
+                        <Link href={'/category/fantasy-platform/'}>Fantasy Platform</Link>
                     </Stack>
 
-                    <Stack align={'flex-start'}>
+                    {/* <Stack align={'flex-start'}>
                         <ListHeader>Install App</ListHeader>
-                        <a target="_blank" href={'https://play.google.com/store/apps/details?id=com.babacric.app'}>Android APP</a>
-                    </Stack>
+                        <a target="_blank" rel="noreferre" href={'https://play.google.com/store/apps/details?id=com.babacric.app'}>Android APP</a>
+                    </Stack> */}
                 </SimpleGrid>
             </Container>
 

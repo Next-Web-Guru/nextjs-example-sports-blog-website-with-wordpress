@@ -13,10 +13,10 @@ function PageSeo({ data }) {
 
             <meta name="description" content={seo.metaDesc} />
 
-            <Link prefetch={false} rel="canonical" href={seo.canonical} />
+            <link rel="canonical" href={seo.canonical} />
 
 
-            <script type="application/ld+json" class="yoast-schema-graph">
+            <script type="application/ld+json" className="yoast-schema-graph">
                 {`
             ${seo.schema.raw}
 `}

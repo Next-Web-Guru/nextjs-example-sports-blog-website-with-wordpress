@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Head from "next/head";
 
 function PostSeo({ data }) {
@@ -16,7 +17,7 @@ function PostSeo({ data }) {
 
             <meta name="description" content={seo.metaDesc} />
 
-            <Link prefetch={false} rel="canonical" href={seo.canonical} />
+            <link rel="canonical" href={seo.canonical} />
 
             <meta property="og:locale" content="en_US" />
             <meta property="og:type" content={seo.opengraphType} />
@@ -36,7 +37,7 @@ function PostSeo({ data }) {
             <meta name="twitter:label2" content="Est. reading time" />
             <meta name="twitter:data2" content="2 minutes" />
 
-            <script type="application/ld+json" class="yoast-schema-graph">
+            <script type="application/ld+json" className="yoast-schema-graph">
                 {`
             ${seo.schema.raw}
 `}

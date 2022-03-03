@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Head from "next/head";
 
 function ArchiveSeo({ data, pageType, pageName }) {
@@ -13,7 +14,7 @@ function ArchiveSeo({ data, pageType, pageName }) {
             <title>{`${pageType} : ${pageName}`}</title>
 
 
-            <script type="application/ld+json" class="yoast-schema-graph">
+            <script type="application/ld+json" className="yoast-schema-graph">
                 {`
             ${seo.schema.raw}
 `}

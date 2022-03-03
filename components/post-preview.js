@@ -22,7 +22,7 @@ export default function PostPreview({
       </div>
       <Box p={4}>
         <Text as="h3" fontSize="large" fontWeight="bold" className="text-3xl mb-3 leading-snug">
-          <Link prefetch={false} href={uri}>
+          <Link href={uri}>
             <a
               className="hover:underline"
               dangerouslySetInnerHTML={{ __html: title }}

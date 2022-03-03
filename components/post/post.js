@@ -10,7 +10,7 @@ function Post({ data }) {
             <PostSeo data={data} />
             <Grid templateColumns={{ md: "0.2fr 2.8fr 1fr", sm: "repeat(2, 1fr)" }} gap={{ base: 0, md: 4 }}>
                 <Box>
-                    <SocialShare data={data} />
+                    {/* <SocialShare data={data} /> */}
                 </Box>
                 <Box>
                     <PostData data={data} />

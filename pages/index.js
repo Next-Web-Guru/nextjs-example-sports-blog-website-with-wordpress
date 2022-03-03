@@ -20,7 +20,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         <title data-rh="true">BabaCric | Latest Sports News , Dream11 Prediction and Tips</title>
         <meta name="description" content="Get cricket news, tips and analysis reports that help you to create teams on Fantasy platforms like Dream11, Vision11, Playerzpot etc " />
 
-        <Link prefetch={false} rel="canonical" href="http://babacric.in/" />
+        <link rel="canonical" href="http://babacric.in/" />
       </Head>
 
       {/* <Header menu={menu} /> */}
