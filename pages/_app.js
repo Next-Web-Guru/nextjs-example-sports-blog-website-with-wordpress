@@ -6,6 +6,7 @@ import '../styles/index.css'
 import '../styles/gutenberg/style.css'
 import '../styles/gutenberg/theme.css'
 import Head from 'next/head'
+import Script from 'next/script'
 
 
 const MyApp = ({ Component, pageProps }) => {
@@ -17,8 +18,13 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta data-rh="true" name="google-site-verification" content="3FCgkBGO8Qfael6rkqbx7be0JHNduxct6Xc7TFsc5_0" />
         <meta data-rh="true" name="facebook-domain-verification" content="vylwdr385iepjfnp4mkn0s77p6p94b" />
+
       </Head>
 
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=UA-179630905-1"
+        strategy="afterInteractive"
+      />
       <ChakraProvider>
         <ColorModeScript initialColorMode="default"></ColorModeScript>
         <CSSReset />
