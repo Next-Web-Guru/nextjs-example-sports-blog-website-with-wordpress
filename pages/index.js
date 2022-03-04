@@ -7,7 +7,7 @@ import Header from '../components/layout/header'
 import Footer from '../components/layout/footer'
 import { VStack } from '@chakra-ui/react'
 
-export default function Index({ allPosts: { edges }, preview }) {
+export default function Index({ allPosts: { edges }, preview, menu }) {
   const heroPost = edges[0]?.node
   const morePosts = edges.slice(1)
 
@@ -23,7 +23,7 @@ export default function Index({ allPosts: { edges }, preview }) {
         <link rel="canonical" href="http://babacric.in/" />
       </Head>
 
-      {/* <Header menu={menu} /> */}
+      <Header menu={menu} />
       <VStack>
         <div className="mainBody">
           <main className="mainContent">
@@ -53,13 +53,13 @@ export default function Index({ allPosts: { edges }, preview }) {
 export async function getStaticProps({ preview = false }) {
 
   const allPosts = await getAllPostsForHome(preview)
-  //const menuData = await getHeaderMenuByName(process.env.headerMenuName)
+  const menuData = await getHeaderMenuByName(process.env.headerMenuName)
 
   return {
     props: {
       allPosts,
       preview,
-      //menu: menuData.menu 
+      menu: menuData.menu
     },
   }
 }

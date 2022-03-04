@@ -10,7 +10,7 @@ import Footer from "../components/layout/footer";
 import Header from "../components/layout/header";
 import PageData from "../components/page/page-data";
 import Post from "../components/post/post";
-import { getAllPostsWithSlug, getCateogryRecentPostbyName, getHeaderMenuByName, getPageDetailsByUri, getPostDetailsByUri } from "../lib/api";
+import { getAllPostsWithSlug, getCateogryRecentPostbyName, getHeaderMenuByName, getPageDetailsByUri, getPostDetailsByUri, getAllPostsWithUri } from "../lib/api";
 
 
 //export const config = { amp: 'hybrid' }
@@ -64,7 +64,7 @@ function OtherPages(props) {
 
     return (
         <>
-            {/* <Header menu={props.menu} /> */}
+            <Header menu={props.menu} />
             <VStack>
                 <div className="mainBody">
                     <main className="mainContent">
@@ -109,26 +109,38 @@ export async function getStaticProps(context) {
     }
 
     // menu data
-    //const menuData = await getHeaderMenuByName(process.env.headerMenuName)
+    const menuData = await getHeaderMenuByName(process.env.headerMenuName)
 
     return {
         props: {
             urlType: urlType,
             urlName: slug[0],
             data: data,
-            //menu: menuData.menu,
+            menu: menuData.menu,
             pageType: pageType,
             slug: slug,
         },
-        revalidate: 10 //10 minutes
+        revalidate: 15 //10 minutes
     }
 }
 
 
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+
+    const allPosts = await getAllPostsWithUri()
+
+    const mostVisitedUri = ['/fantasy-cricket/dream11-investment-strategy-5-years-of-experience/']
+
+    const categoryListUri = ['/category/ipl', '/category/fantasy-cricket', '/category/cricket', '/category/birthday', '/category/fantasy-platform']
+
+    const postListUri = allPosts.edges.map(({ node }) => `${node.uri}`)
+
+    const allUri = [...mostVisitedUri, ...categoryListUri, ...postListUri]
+
+
     return {
-        paths: [],
+        paths: allUri,
         fallback: true
     }
 }
