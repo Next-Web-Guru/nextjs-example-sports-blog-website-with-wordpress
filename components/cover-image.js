@@ -5,6 +5,7 @@ import Link from 'next/link'
 export default function CoverImage({ title, coverImage, uri }) {
   const image = (
     <Image
+      priority
       width={2000}
       height={1000}
       alt={`Cover Image for ${title}`}

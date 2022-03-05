@@ -26,7 +26,7 @@ function PostData({ data }) {
                 </Text>
 
                 {/* Featured Media */}
-                <Image src={imagePath} width={320} height={180} layout="responsive" alt={data.title} />
+                <Image priority src={imagePath} width={320} height={180} layout="responsive" alt={data.title} />
 
                 <br />
                 {/* Telegram Join ad */}
