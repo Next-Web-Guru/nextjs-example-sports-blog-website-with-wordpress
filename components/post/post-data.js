@@ -36,6 +36,7 @@ function PostData({ data }) {
                         width={360}
                         height={45}
                         layout="responsive"
+                        alt="Telegram ad"
                     />
                 </Link>
 
@@ -71,6 +72,7 @@ function PostData({ data }) {
                         width={360}
                         height={45}
                         layout="responsive"
+                        alt="Telegram ad"
                     />
                 </Link>
             </Box>
