@@ -8,9 +8,28 @@ import '../styles/gutenberg/theme.css'
 import Head from 'next/head'
 import Script from 'next/script'
 import GoogleAnalytics from '../components/GoogleAnalytics'
+import { useEffect } from 'react'
 
 
 const MyApp = ({ Component, pageProps }) => {
+
+  useEffect(() => {
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "9a3c73d8-b519-47fe-b41b-c7bf44082c98",
+        safari_web_id: "web.onesignal.auto.10bba952-d3e6-4be7-b269-bd5caae877a4",
+        notifyButton: {
+          enable: true,
+        },
+      });
+    });
+
+    return () => {
+      window.OneSignal = undefined;
+    };
+  }, []); // <-- run this effect once on mount
+
   return (
     <>
       <Head>
@@ -24,6 +43,7 @@ const MyApp = ({ Component, pageProps }) => {
         <meta data-rh="true" name="google-site-verification" content="3FCgkBGO8Qfael6rkqbx7be0JHNduxct6Xc7TFsc5_0" />
         <meta data-rh="true" name="facebook-domain-verification" content="vylwdr385iepjfnp4mkn0s77p6p94b" />
 
+        <Script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' strategy="afterInteractive" />
       </Head>
 
       <GoogleAnalytics />
