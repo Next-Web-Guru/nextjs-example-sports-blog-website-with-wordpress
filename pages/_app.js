@@ -29,6 +29,7 @@ const MyApp = ({ Component, pageProps }) => {
         src="https://www.googletagmanager.com/gtag/js?id=UA-179630905-1"
         strategy="afterInteractive"
       />
+
       <ChakraProvider>
         <ColorModeScript initialColorMode="default"></ColorModeScript>
         <CSSReset />
