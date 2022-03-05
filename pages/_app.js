@@ -7,6 +7,7 @@ import '../styles/gutenberg/style.css'
 import '../styles/gutenberg/theme.css'
 import Head from 'next/head'
 import Script from 'next/script'
+import GoogleAnalytics from '../components/GoogleAnalytics'
 
 
 const MyApp = ({ Component, pageProps }) => {
@@ -25,10 +26,7 @@ const MyApp = ({ Component, pageProps }) => {
 
       </Head>
 
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=UA-179630905-1"
-        strategy="afterInteractive"
-      />
+      <GoogleAnalytics />
 
       <ChakraProvider>
         <ColorModeScript initialColorMode="default"></ColorModeScript>
