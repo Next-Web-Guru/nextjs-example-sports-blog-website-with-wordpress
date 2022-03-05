@@ -61,5 +61,6 @@ export async function getStaticProps({ preview = false }) {
       preview,
       menu: menuData.menu
     },
+    revalidate: 15 //10 minutes
   }
 }
