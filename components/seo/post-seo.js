@@ -38,9 +38,9 @@ function PostSeo({ data }) {
             <meta name="twitter:data2" content="2 minutes" />
 
             <script type="application/ld+json" className="yoast-schema-graph">
-                {`
-            ${seo.schema.raw}
-`}
+
+                {seo.schema.raw}
+
             </script>
         </Head>
     );
