@@ -37,11 +37,16 @@ function PostSeo({ data }) {
             <meta name="twitter:label2" content="Est. reading time" />
             <meta name="twitter:data2" content="2 minutes" />
 
-            <script type="application/ld+json" className="yoast-schema-graph">
+            {/* <script type="application/ld+json" className="yoast-schema-graph">
 
                 {seo.schema.raw}
 
-            </script>
+            </script> */}
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: seo.schema.raw }}
+            />
         </Head>
     );
 }
