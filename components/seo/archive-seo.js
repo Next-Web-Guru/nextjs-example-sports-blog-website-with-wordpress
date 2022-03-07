@@ -14,11 +14,16 @@ function ArchiveSeo({ data, pageType, pageName }) {
             <title>{`${pageType} : ${pageName}`}</title>
 
 
-            <script type="application/ld+json" className="yoast-schema-graph">
+            {/* <script type="application/ld+json" className="yoast-schema-graph">
                 {`
             ${seo.schema.raw}
 `}
-            </script>
+            </script> */}
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: seo.schema.raw }}
+            />
         </Head>
     );
 }

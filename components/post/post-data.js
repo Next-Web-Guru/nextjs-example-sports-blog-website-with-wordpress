@@ -20,6 +20,7 @@ function PostData({ data }) {
                 </Text>
 
                 {/* Author detail */}
+
                 <Text fontSize="md" as="p" align="center">
                     By <b>{`${author.firstName} ${author.lastName}`}</b>
                     on <b>{date.toDateString()}</b>

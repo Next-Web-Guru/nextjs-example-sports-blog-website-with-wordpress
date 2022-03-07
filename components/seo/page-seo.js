@@ -16,11 +16,16 @@ function PageSeo({ data }) {
             <link rel="canonical" href={seo.canonical} />
 
 
-            <script type="application/ld+json" className="yoast-schema-graph">
+            {/* <script type="application/ld+json" className="yoast-schema-graph">
                 {`
             ${seo.schema.raw}
 `}
-            </script>
+            </script> */}
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: seo.schema.raw }}
+            />
         </Head>
     );
 }

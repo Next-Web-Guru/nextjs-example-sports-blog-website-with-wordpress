@@ -4,9 +4,22 @@ import Head from "next/head";
 function PostSeo({ data }) {
 
     const seo = data.seo
+
     const imagePath = data.featuredImage.node.sourceUrl
     const imageSize = data.featuredImage.node.mediaDetails
     const authorName = data.author.node.name
+
+    // console.log("data = ", data)
+
+    // const author_url = process.env.siteUrl + data.author.node.uri
+    // const current_author_raw = '{"@type":"Person", '
+    // const final_author_raw = current_author_raw + '"url":' + author_url
+
+    // const raw_schema = seo.schema.raw.replace(current_author_raw, final_author_raw)
+
+
+
+    //{"@type":"Person",
 
     return (
         <Head>

@@ -1,16 +1,11 @@
 import { VStack } from "@chakra-ui/react";
-import { filterProps } from "framer-motion";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import PostList from "../components/archives/post-list";
-import Container from "../components/container";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
 import Footer from "../components/layout/footer";
 import Header from "../components/layout/header";
 import PageData from "../components/page/page-data";
 import Post from "../components/post/post";
-import { getAllPostsWithSlug, getCateogryRecentPostbyName, getHeaderMenuByName, getPageDetailsByUri, getPostDetailsByUri, getAllPostsWithUri } from "../lib/api";
+import { getCateogryRecentPostbyName, getHeaderMenuByName, getPageDetailsByUri, getPostDetailsByUri, getAllPostsWithUri } from "../lib/api";
 
 
 //export const config = { amp: 'hybrid' }
@@ -88,7 +83,16 @@ export async function getStaticProps(context) {
     let pageType;
 
     if (urlType === 'category' || urlType === 'tag' || urlType === 'author') {
-        data = await getCateogryRecentPostbyName(slug[1])
+
+        let typeName
+        if (urlType === 'tag') {
+            typeName = urlType
+        }
+        else {
+            typeName = urlType + 'Name'
+        }
+
+        data = await getCateogryRecentPostbyName(typeName, slug[1])
 
         pageType = "archive"
     }
