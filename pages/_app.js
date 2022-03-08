@@ -23,7 +23,7 @@ const MyApp = ({ Component, pageProps }) => {
         //   enable: true,
         // },
         promptOptions: {
-          slide: {
+          slidedown: {
             enabled: true,
             autoPrompt: true,
             timeDelay: 20,
