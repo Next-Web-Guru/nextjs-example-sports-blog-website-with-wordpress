@@ -23,7 +23,7 @@ const MyApp = ({ Component, pageProps }) => {
         //   enable: true,
         // },
         promptOptions: {
-          native: {
+          slide: {
             enabled: true,
             autoPrompt: true,
             timeDelay: 20,
