@@ -22,7 +22,7 @@ function PostData({ data }) {
                 {/* Author detail */}
 
                 <Text fontSize="md" as="p" align="center">
-                    By <b>{`${author.firstName} ${author.lastName}`}</b>
+                    By <b>{`${author.firstName} ${author.lastName} `}</b>
                     on <b>{date.toDateString()}</b>
                 </Text>
 
@@ -30,16 +30,19 @@ function PostData({ data }) {
                 <Image priority src={imagePath} width={320} height={180} layout="responsive" alt={data.title} />
 
                 <br />
-                {/* Telegram Join ad */}
-                <Link href="https://bit.ly/3HMsPd8" target="_blank">
+                {/* Advertisment */}
+                <Link href="https://betway.com/?s=bw201071&a=AFF2691637807824315&mid=86309&utm_source=201071&utm_medium=Affiliate&utm_campaign=AFF2691637807824315" target="_blank" title="Betway IN ICCI Women's banners">
                     <Image
-                        src='https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/02/11104953/telegram-footer.png'
-                        width={360}
-                        height={45}
+                        priority
+                        src='https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/03/11102256/dde12ec96adf82d.gif'
+                        width={323}
+                        height={83}
                         layout="responsive"
-                        alt="Telegram ad"
+                        alt="Betway IN ICCI Women's banners"
                     />
                 </Link>
+
+
 
                 {/* Post Content */}
                 <div

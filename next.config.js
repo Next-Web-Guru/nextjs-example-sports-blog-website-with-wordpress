@@ -7,6 +7,6 @@ module.exports = withPWA({
         siteUrl: "http://babacric.in",
     },
     images: {
-        domains: ['i0.wp.com', 'secure.gravatar.com', 'babacricnews.s3.ap-south-1.amazonaws.com'],
+        domains: ['i0.wp.com', 'secure.gravatar.com', 'babacricnews.s3.ap-south-1.amazonaws.com', 'www.betwaypartners.com'],
     },
 })
