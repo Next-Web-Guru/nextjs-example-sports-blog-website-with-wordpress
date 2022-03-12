@@ -54,7 +54,7 @@ const MyApp = ({ Component, pageProps }) => {
 
       </Head>
 
-      <Script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' strategy="afterInteractive" />
+      {/* <Script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' strategy="afterInteractive" /> */}
 
       <Script strategy="afterInteractive" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5783794107508214"
         crossorigin="anonymous" />

@@ -31,7 +31,7 @@ function PostData({ data }) {
 
                 <br />
                 {/* Advertisment */}
-                <Link href="https://betway.com/?s=bw201071&a=AFF2691637807824315&mid=86309&utm_source=201071&utm_medium=Affiliate&utm_campaign=AFF2691637807824315" target="_blank" title="Betway IN ICCI Women's banners">
+                {/* <Link href="https://betway.com/?s=bw201071&a=AFF2691637807824315&mid=86309&utm_source=201071&utm_medium=Affiliate&utm_campaign=AFF2691637807824315" target="_blank" title="Betway IN ICCI Women's banners">
                     <Image
                         priority
                         src='https://babacricnews.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/03/11102256/dde12ec96adf82d.gif'
@@ -40,7 +40,7 @@ function PostData({ data }) {
                         layout="responsive"
                         alt="Betway IN ICCI Women's banners"
                     />
-                </Link>
+                </Link> */}
 
 
 
