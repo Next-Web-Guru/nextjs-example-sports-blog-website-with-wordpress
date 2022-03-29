@@ -13,30 +13,30 @@ import { useEffect } from 'react'
 
 const MyApp = ({ Component, pageProps }) => {
 
-  useEffect(() => {
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function () {
-      OneSignal.init({
-        appId: "9a3c73d8-b519-47fe-b41b-c7bf44082c98",
-        safari_web_id: "web.onesignal.auto.10bba952-d3e6-4be7-b269-bd5caae877a4",
-        // notifyButton: {
-        //   enable: true,
-        // },
-        promptOptions: {
-          slidedown: {
-            enabled: true,
-            autoPrompt: true,
-            timeDelay: 20,
-            pageViews: 1,
-          }
-        },
-      });
-    });
+  // useEffect(() => {
+  //   window.OneSignal = window.OneSignal || [];
+  //   OneSignal.push(function () {
+  //     OneSignal.init({
+  //       appId: "9a3c73d8-b519-47fe-b41b-c7bf44082c98",
+  //       safari_web_id: "web.onesignal.auto.10bba952-d3e6-4be7-b269-bd5caae877a4",
+  //       // notifyButton: {
+  //       //   enable: true,
+  //       // },
+  //       promptOptions: {
+  //         slidedown: {
+  //           enabled: true,
+  //           autoPrompt: true,
+  //           timeDelay: 20,
+  //           pageViews: 1,
+  //         }
+  //       },
+  //     });
+  //   });
 
-    return () => {
-      window.OneSignal = undefined;
-    };
-  }, []); // <-- run this effect once on mount
+  //   return () => {
+  //     window.OneSignal = undefined;
+  //   };
+  // }, []); // <-- run this effect once on mount
 
   return (
     <>
@@ -54,7 +54,7 @@ const MyApp = ({ Component, pageProps }) => {
 
       </Head>
 
-      <Script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' strategy="afterInteractive" />
+      {/* <Script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' strategy="afterInteractive" /> */}
 
       {/* <Script strategy="afterInteractive" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5783794107508214"
         crossorigin="anonymous" /> */}
