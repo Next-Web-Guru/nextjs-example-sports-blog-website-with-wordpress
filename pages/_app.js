@@ -1,6 +1,6 @@
 import { ChakraProvider, CSSReset, ColorModeScript, theme, ThemeProvider } from '@chakra-ui/react'
-import Container from '../components/container'
-import Layout from '../components/layout'
+// import Container from '../components/container'
+// import Layout from '../components/layout'
 //import MainLayout from '../components/layout/main-layout'
 import '../styles/index.css'
 import '../styles/gutenberg/style.css'
@@ -56,10 +56,10 @@ const MyApp = ({ Component, pageProps }) => {
 
       <Script src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' strategy="afterInteractive" />
 
-      <Script strategy="afterInteractive" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5783794107508214"
-        crossorigin="anonymous" />
+      {/* <Script strategy="afterInteractive" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5783794107508214"
+        crossorigin="anonymous" /> */}
 
-      <GoogleAnalytics />
+      {/* <GoogleAnalytics /> */}
 
       <ChakraProvider>
         <ColorModeScript initialColorMode="default"></ColorModeScript>
