@@ -14,6 +14,6 @@ This is a readymade blog theme with Chakra UI and NextJS. You can directly use t
   - [WP Rest Menu](https://wordpress.org/plugins/wp-rest-menu/)
 - Change next.config.js as your WordPress info
 - Run Command
-  - `bash npm run dev `
+  - `npm run dev `
 
 You can use this free source code as you want. You can also connect with us for any Premium features at info@nextwebguru.com
